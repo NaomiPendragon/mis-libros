@@ -1,0 +1,51 @@
+:root {
+  --primario: #1f7a6b;
+  --primario-oscuro: #17604f;
+  --fondo: #f3f3f1;
+  --tarjeta: #ffffff;
+  --borde: #dcdcd8;
+  --texto: #1d1d1b;
+  --suave: #6b6b66;
+  --peligro: #b3261e;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.app { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+h1 { color: var(--primario); margin: 0; }
+h2 { margin: 0 0 8px; }
+.usuario { display: flex; align-items: center; gap: 12px; color: var(--suave); font-size: 14px; }
+.centro { text-align: center; margin-top: 40vh; }
+
+.tarjeta { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 10px; padding: 16px; }
+.auth { max-width: 380px; margin: 40px auto; display: flex; flex-direction: column; gap: 14px; }
+.auth label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.cambio { text-align: center; font-size: 14px; margin: 0; }
+
+input, select { font: inherit; padding: 9px 11px; border: 1px solid var(--borde); border-radius: 6px; background: #fff; width: 100%; }
+button { font: inherit; padding: 9px 14px; border: 1px solid var(--primario); border-radius: 6px; background: var(--primario); color: #fff; cursor: pointer; white-space: nowrap; }
+button:hover { background: var(--primario-oscuro); }
+button:disabled { opacity: .6; cursor: default; }
+button.secundario { background: #fff; color: var(--primario); }
+button.peligro { background: #fff; color: var(--peligro); border-color: var(--peligro); }
+button.enlace { background: none; border: none; color: var(--primario); padding: 0; text-decoration: underline; }
+
+.nuevo { display: grid; grid-template-columns: 2fr 1.5fr auto; gap: 10px; margin-bottom: 16px; }
+.lista { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.lista li { display: grid; grid-template-columns: 1fr 150px auto; gap: 10px; align-items: center; }
+.info { display: flex; flex-direction: column; }
+.info span { color: var(--suave); font-size: 14px; }
+.acciones { display: flex; gap: 8px; }
+
+.error { color: var(--peligro); margin: 0 0 12px; }
+.aviso { color: var(--primario); margin: 0; }
+.vacio { text-align: center; color: var(--suave); margin-top: 40px; }
+
+@media (max-width: 560px) {
+  .nuevo, .lista li { grid-template-columns: 1fr; }
+}
